@@ -50,13 +50,13 @@ const initText = async (_: textType) => {
         //     }
         // }
 
-        const matLite = new THREE.MeshBasicMaterial({
+        const matLite = new anyBasicMaterial({
             color: new THREE.Color(colors[i]),
             opacity: 1,
             side: THREE.DoubleSide
         });
 
-        const mesh = new THREE.Mesh(geometry, matLite);
+        const mesh = new any(geometry, matLite);
 
         // get size of text  f
         const boundingBox = new THREE.Box3().setFromObject(mesh)
@@ -71,9 +71,9 @@ const initText = async (_: textType) => {
 
         // add cube for surrounding text 
         const BoxGeometry = new THREE.BoxGeometry(size.x + size.x / 10, size.y + size.y / 10, size.z);
-        const material = new THREE.MeshBasicMaterial({ color: "red", opacity: 0 });
+        const material = new anyBasicMaterial({ color: "red", opacity: 0 });
         material.transparent = true;
-        const cube = new THREE.Mesh(BoxGeometry, material);
+        const cube = new any(BoxGeometry, material);
         cube.translateX(smallX)
         cube.position.y = - 2.3 * i;
 
